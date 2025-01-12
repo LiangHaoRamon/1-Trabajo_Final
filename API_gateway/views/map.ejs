@@ -1,0 +1,27 @@
+<section id="map_section">
+    <div id="user_hello">
+        <h2>Bienvenido <%= user_name %></h2>
+    </div>
+    <div id="planet_carousel">
+        <div class="carousel-container">
+            <% elements.forEach((planet, index) => { %>
+                <div class="carousel-item <%= index === 0 ? 'active' : '' %>">
+                    <div class="card">
+                        <div class="card-header">
+                            <strong><%= planet.name %></strong>
+                        </div>
+                        <div class="card-body">
+                            <p><strong>Sistema Solar:</strong> <%= planet.system %></p>
+                            <button class="map_planet_but" data-route="/characters/<%= planet.name %>">Personajes</button>
+                        </div>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+        <button id="prevBtn" class="carousel-btn">Anterior</button>
+        <button id="nextBtn" class="carousel-btn">Siguiente</button>
+    </div>
+    
+    <script src="/js/carousel.js"></script>
+    <script src="/js/map_chars_route_but.js"></script>
+</section>

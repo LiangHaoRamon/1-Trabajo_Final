@@ -1,0 +1,13 @@
+##- run the mistral container (alone when docker compose not doing network) -##
+docker-compose up -d
+docker-compose exec ollama ollama pull mistral
+
+##- build the flask image alone -##
+docker build --tag chat-micro-docker .
+
+##- run the container with the chat microservice in flask alone -##
+docker run -d -p 5000:5000 chat-micro-docker
+
+##- (restart the containers) run all the service with docker compose -##
+in /app_folder > docker build --tag chat-micro-docker .
+docker-compose up -d

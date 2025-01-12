@@ -1,0 +1,2 @@
+Start Docker container named: dockers
+python app.py

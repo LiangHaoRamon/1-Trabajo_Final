@@ -1,0 +1,14 @@
+####### Restart Database and initialize everything #######
+--- Next Step: 9 ---
+
+1 - cd wiki_microservice_fastapi
+2 - mysql -uroot -p < app\db\init-mysql.sql
+3 - python prestart.py 
+4 - python app\main.py
+
+
+##- docker image -##
+docker build --tag wiki-micro-docker .
+
+##- When every image is set up -##
+en 1-Trabajo_final -> docker-compose up -d

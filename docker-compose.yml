@@ -1,0 +1,139 @@
+version: '3.9'
+services:
+  ollama_context:
+    image: ollama/ollama:latest
+    ports:
+      - 2207:11434
+    container_name: ollama-context
+    volumes:
+      - ./chat_microservice_flask/mistral_model/code:/code
+      - ./chat_microservice_flask/models/ollama/models:/root/.ollama
+    pull_policy: always
+    tty: true
+    #restart: always
+    environment:
+      - OLLAMA_KEEP_ALIVE=24h
+      - OLLAMA_HOST=0.0.0.0
+    networks:
+      - portal_saltamundos_net
+
+  chat-webui:
+    # image: ghcr.io/open-webui/open-webui:main
+    image: chat-micro-docker
+    container_name: chat-webui
+    volumes:
+      - ./chat_microservice_flask/mistral_model/chat-webui:/app/backend/data
+    depends_on:
+      - ollama_context
+    ports:
+      - 8080:8080
+    environment: # https://docs.openwebui.com/getting-started/env-configuration#default_models
+      - OLLAMA_BASE_URLS=http://ollama_context:11434
+      - ENV=dev
+      - WEBUI_AUTH=False
+      - WEBUI_NAME=Test AI
+      - WEBUI_URL=http://localhost:8080
+      - WEBUI_SECRET_KEY=testing
+    # extra_hosts:
+    #   - host.docker.internal:host-gateway
+    # restart: unless-stopped
+    #restart: always
+    networks:
+      - portal_saltamundos_net
+
+  neo4j:
+    container_name: neo4j-map
+    image: neo4j:latest
+    ports:
+      - 7474:7474
+      - 7687:7687
+    environment:
+      - NEO4J_AUTH=neo4j/${NEO4J_PASSWORD}
+      - NEO4J_apoc_export_file_enabled=true
+      - NEO4J_apoc_import_file_enabled=true
+      - NEO4J_apoc_import_file_use__neo4j__config=true
+      - NEO4J_PLUGINS=["apoc"]
+    volumes:
+      - ./map_microservice_node/neo_db/neo4j_db/data:/data
+      - ./map_microservice_node/neo_db/neo4j_db/logs:/logs
+      - ./map_microservice_node/neo_db/neo4j_db/import:/var/lib/neo4j/import
+      - ./map_microservice_node/neo_db/neo4j_db/plugins:/plugins
+    #restart: always
+    networks:
+      - portal_saltamundos_net
+    
+  map-neo:
+    image: map-neo-image
+    container_name: map-neo-container
+    depends_on:
+      - neo4j
+    ports:
+      - 3030:3030
+    volumes:
+      - ./map_microservice_node:/usr/src/app
+    command: >
+      node app.js
+    networks:
+      - portal_saltamundos_net
+    
+  db:
+    image: mysql:8.0
+    container_name: mysql-container
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: wiki
+      MYSQL_USER: pipo
+      MYSQL_PASSWORD: man
+    ports:
+      - 3307:3306
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./wiki_microservice_fastapi/app/db/init-mysql.sql:/docker-entrypoint-initdb.d/init-mysql.sql:ro
+    networks:
+      - portal_saltamundos_net
+
+  app:
+    image: wiki-micro-docker
+    container_name: wiki-fastapi-app
+    depends_on:
+      - db
+    environment:
+      DATABASE_URL: mysql://root:root@db:3306/wiki
+    ports:
+      - 8000:8000
+    volumes:
+      - ./wiki_microservice_fastapi:/app
+    command: >
+      sh -c "
+      python prestart.py &&
+      uvicorn app.main:app --host 0.0.0.0 --port 8000"
+    networks:
+      - portal_saltamundos_net
+
+  api-gateway:
+    image: api_gateway
+    container_name: api-gateway
+    depends_on:
+      - chat-webui
+      - neo4j
+      - db
+      - app
+    ports:
+      - 3000:3000
+    volumes:
+      - ./API_gateway:/usr/src/app
+    environment:
+      - JWT_SECRET=el_portal_del_saltamundos_jwt_secret
+      - NODE_ENV=development
+    command: >
+      node app.js
+    networks:
+      - portal_saltamundos_net
+      
+volumes:
+  db_data:
+
+networks:
+  portal_saltamundos_net:
+    external: false
+  

@@ -1,0 +1,236 @@
+// Creating suns
+CREATE (scadrian_sun:sun {name:'scadrian_sun', system:'scadrian'})
+CREATE (rosharan_sun:sun {name:'rosharan_sun', system:'rosharan'})
+
+// Creating Scadrian system
+CREATE (scadrial:Planet {name:'scadrial', system:'scadrian'})
+CREATE (aagal_nod:Planet {name:'aagal_nod', system:'scadrian'})
+CREATE (aagal_uch:Planet {name:'aagal_uch', system:'scadrian'})
+CREATE (dp1:Planet {name:'dwarf_planet_1', system:'scadrian'})
+CREATE (dp2:Planet {name:'dwarf_planet_2', system:'scadrian'})
+
+// Creating Rosharan system
+CREATE (ashyn:Planet {name:'ashyn', system:'rosharan'})
+CREATE (roshar:Planet {name:'roshar', system:'rosharan'})
+CREATE (mishim:Moon {name:'mishim', system:'rosharan'})
+CREATE (salas:Moon {name:'salas', system:'rosharan'})
+CREATE (nomon:Moon {name:'nomon', system:'rosharan'})
+CREATE (braize:Planet {name:'braize', system:'rosharan'})
+CREATE (jes:Planet {name:'jes', system:'rosharan'})
+CREATE (nan:Planet {name:'nan', system:'rosharan'})
+CREATE (chach:Planet {name:'chach', system:'rosharan'})
+CREATE (vev:Planet {name:'vev', system:'rosharan'})
+CREATE (palah:Planet {name:'palah', system:'rosharan'})
+CREATE (shash:Planet {name:'shash', system:'rosharan'})
+CREATE (betab:Planet {name:'betab', system:'rosharan'})
+CREATE (kak:Planet {name:'kak', system:'rosharan'})
+CREATE (tanat:Planet {name:'tanat', system:'rosharan'})
+CREATE (ishi:Planet {name:'ishi', system:'rosharan'})
+
+// Creating Scadrian system orbit relations
+CREATE
+(scadrial)-[:ORBITS {order:[1]}]->(scadrian_sun),
+(aagal_nod)-[:ORBITS {order:[2]}]->(scadrian_sun),
+(aagal_uch)-[:ORBITS {order:[3]}]->(scadrian_sun),
+(dp1)-[:ORBITS {order:[4]}]->(scadrian_sun),
+(dp2)-[:ORBITS {order:[5]}]->(scadrian_sun),
+
+// Creating Rosharan system orbit relations
+(ashyn)-[:ORBITS {order:[1]}]->(rosharan_sun),
+(roshar)-[:ORBITS {order:[2]}]->(rosharan_sun),
+(mishim)-[:ORBITS {order:[1]}]->(roshar),
+(salas)-[:ORBITS {order:[2]}]->(roshar),
+(nomon)-[:ORBITS {order:[3]}]->(roshar),
+(braize)-[:ORBITS {order:[3]}]->(rosharan_sun),
+(jes)-[:ORBITS {order:[4]}]->(rosharan_sun),
+(nan)-[:ORBITS {order:[5]}]->(rosharan_sun),
+(chach)-[:ORBITS {order:[6]}]->(rosharan_sun),
+(vev)-[:ORBITS {order:[7]}]->(rosharan_sun),
+(palah)-[:ORBITS {order:[8]}]->(rosharan_sun),
+(shash)-[:ORBITS {order:[9]}]->(rosharan_sun),
+(betab)-[:ORBITS {order:[10]}]->(rosharan_sun),
+(kak)-[:ORBITS {order:[11]}]->(rosharan_sun),
+(tanat)-[:ORBITS {order:[12]}]->(rosharan_sun),
+(ishi)-[:ORBITS {order:[13]}]->(rosharan_sun)
+
+// Creating characters
+CREATE (vin:Character {name:'vin'})
+CREATE (kelsier:Character {name:'kelsier'})
+CREATE (sazed:Character {name:'sazed'})
+CREATE (elend:Character {name:'elend'})
+CREATE (marsh:Character {name:'marsh'})
+CREATE (fantasma:Character {name:'fantasma'})
+CREATE (beldre:Character {name:'beldre'})
+CREATE (brisa:Character {name:'brisa'})
+CREATE (ham:Character {name:'ham'})
+CREATE (clubs:Character {name:'clubs'})
+CREATE (dockson:Character {name:'dockson'})
+CREATE (straff:Character {name:'straff'})
+CREATE (zane:Character {name:'zane'})
+CREATE (tindwyl:Character {name:'tindwyl'})
+CREATE (tensoon:Character {name:'tensoon'})
+CREATE (lord_legislador:Character {name:'lord_legislador'})
+CREATE (alendi:Character {name:'alendi'})
+
+// Creating characters live
+CREATE
+(vin)-[:ORIGIN]->(scadrial),
+(kelsier)-[:ORIGIN]->(scadrial),
+(sazed)-[:ORIGIN]->(scadrial),
+(elend)-[:ORIGIN]->(scadrial),
+(marsh)-[:ORIGIN]->(scadrial),
+(fantasma)-[:ORIGIN]->(scadrial),
+(beldre)-[:ORIGIN]->(scadrial),
+(brisa)-[:ORIGIN]->(scadrial),
+(ham)-[:ORIGIN]->(scadrial),
+(clubs)-[:ORIGIN]->(scadrial),
+(dockson)-[:ORIGIN]->(scadrial),
+(straff)-[:ORIGIN]->(scadrial),
+(zane)-[:ORIGIN]->(scadrial),
+(tindwyl)-[:ORIGIN]->(scadrial),
+(tensoon)-[:ORIGIN]->(scadrial),
+(lord_legislador)-[:ORIGIN]->(scadrial),
+(alendi)-[:ORIGIN]->(scadrial)
+
+// Creating Characters knows graph
+CREATE
+(vin)-[:KNOWS {reason:["banda_kelsier"]}]->(kelsier),
+(vin)-[:KNOWS {reason:["aprendiz"]}]->(kelsier),
+(vin)-[:KNOWS {reason:["banda_kelsier"]}]->(sazed),
+(vin)-[:KNOWS {reason:["pareja"]}]->(elend),
+(vin)-[:KNOWS {reason:["banda_kelsier"]}]->(marsh),
+(vin)-[:KNOWS {reason:["banda_kelsier"]}]->(fantasma),
+(vin)-[:KNOWS {reason:["banda_kelsier"]}]->(brisa),
+(vin)-[:KNOWS {reason:["banda_kelsier"]}]->(ham),
+(vin)-[:KNOWS {reason:["banda_kelsier"]}]->(clubs),
+(vin)-[:KNOWS {reason:["banda_kelsier"]}]->(dockson),
+(vin)-[:KNOWS {reason:["nuera"]}]->(straff),
+(vin)-[:KNOWS {reason:["cunyada"]}]->(zane),
+(vin)-[:KNOWS {reason:["enemigo"]}]->(zane),
+(vin)-[:KNOWS {reason:["banda_kelsier"]}]->(tindwyl),
+(vin)-[:KNOWS {reason:["banda_kelsier"]}]->(tensoon),
+(vin)-[:KNOWS {reason:["companyero"]}]->(tensoon),
+(vin)-[:KNOWS {reason:["enemigo"]}]->(lord_legislador),
+(vin)-[:KNOWS {reason:["subdito"]}]->(lord_legislador),
+
+(kelsier)-[:KNOWS {reason:["mentor"]}]->(vin),
+(kelsier)-[:KNOWS {reason:["banda_kelsier"]}]->(sazed),
+(kelsier)-[:KNOWS {reason:["salva"]}]->(elend),
+(kelsier)-[:KNOWS {reason:["hermano"]}]->(marsh),
+(kelsier)-[:KNOWS {reason:["banda_kelsier"]}]->(fantasma),
+(kelsier)-[:KNOWS {reason:["banda_kelsier"]}]->(brisa),
+(kelsier)-[:KNOWS {reason:["banda_kelsier"]}]->(ham),
+(kelsier)-[:KNOWS {reason:["banda_kelsier"]}]->(clubs),
+(kelsier)-[:KNOWS {reason:["banda_kelsier"]}]->(dockson),
+(kelsier)-[:KNOWS {reason:["mejor_amigo"]}]->(dockson),
+(kelsier)-[:KNOWS {reason:["enemigo"]}]->(lord_legislador),
+(kelsier)-[:KNOWS {reason:["subdito"]}]->(lord_legislador),
+(kelsier)-[:KNOWS {reason:["asesinado"]}]->(lord_legislador),
+
+(sazed)-[:KNOWS {reason:["banda_kelsier"]}]->(elend),
+(sazed)-[:KNOWS {reason:["banda_kelsier"]}]->(marsh),
+(sazed)-[:KNOWS {reason:["banda_kelsier"]}]->(fantasma),
+(sazed)-[:KNOWS {reason:["banda_kelsier"]}]->(brisa),
+(sazed)-[:KNOWS {reason:["banda_kelsier"]}]->(ham),
+(sazed)-[:KNOWS {reason:["banda_kelsier"]}]->(clubs),
+(sazed)-[:KNOWS {reason:["banda_kelsier"]}]->(dockson),
+(sazed)-[:KNOWS {reason:["pareja"]}]->(tindwyl),
+(sazed)-[:KNOWS {reason:["banda_kelsier"]}]->(tensoon),
+(sazed)-[:KNOWS {reason:["enemigo"]}]->(lord_legislador),
+(sazed)-[:KNOWS {reason:["subdito"]}]->(lord_legislador),
+
+(marsh)-[:KNOWS {reason:["banda_kelsier"]}]->(elend),
+(marsh)-[:KNOWS {reason:["banda_kelsier"]}]->(fantasma),
+(marsh)-[:KNOWS {reason:["banda_kelsier"]}]->(brisa),
+(marsh)-[:KNOWS {reason:["banda_kelsier"]}]->(ham),
+(marsh)-[:KNOWS {reason:["banda_kelsier"]}]->(clubs),
+(marsh)-[:KNOWS {reason:["banda_kelsier"]}]->(dockson),
+(marsh)-[:KNOWS {reason:["enemigo"]}]->(lord_legislador),
+(marsh)-[:KNOWS {reason:["inquisidor"]}]->(lord_legislador),
+(marsh)-[:KNOWS {reason:["subdito"]}]->(lord_legislador),
+
+(elend)-[:KNOWS {reason:["salvado"]}]->(kelsier),
+(elend)-[:KNOWS {reason:["banda_kelsier"]}]->(sazed),
+(elend)-[:KNOWS {reason:["banda_kelsier"]}]->(marsh),
+(elend)-[:KNOWS {reason:["banda_kelsier"]}]->(fantasma),
+(elend)-[:KNOWS {reason:["banda_kelsier"]}]->(brisa),
+(elend)-[:KNOWS {reason:["banda_kelsier"]}]->(ham),
+(elend)-[:KNOWS {reason:["banda_kelsier"]}]->(clubs),
+(elend)-[:KNOWS {reason:["banda_kelsier"]}]->(dockson),
+(elend)-[:KNOWS {reason:["hijo"]}]->(straff),
+(elend)-[:KNOWS {reason:["hermano"]}]->(zane),
+(elend)-[:KNOWS {reason:["aprendiz"]}]->(tindwyl),
+(elend)-[:KNOWS {reason:["banda_kelsier"]}]->(tensoon),
+(elend)-[:KNOWS {reason:["enemigo"]}]->(lord_legislador),
+(elend)-[:KNOWS {reason:["subdito"]}]->(lord_legislador),
+
+(fantasma)-[:KNOWS {reason:["banda_kelsier"]}]->(brisa),
+(fantasma)-[:KNOWS {reason:["banda_kelsier"]}]->(ham),
+(fantasma)-[:KNOWS {reason:["sobrino"]}]->(clubs),
+(fantasma)-[:KNOWS {reason:["banda_kelsier"]}]->(dockson),
+(fantasma)-[:KNOWS {reason:["banda_kelsier"]}]->(tindwyl),
+(fantasma)-[:KNOWS {reason:["banda_kelsier"]}]->(tensoon),
+(fantasma)-[:KNOWS {reason:["enemigo"]}]->(lord_legislador),
+(fantasma)-[:KNOWS {reason:["pareja"]}]->(beldre),
+(fantasma)-[:KNOWS {reason:["subdito"]}]->(lord_legislador),
+
+(beldre)-[:KNOWS {reason:["subdito"]}]->(lord_legislador),
+
+(brisa)-[:KNOWS {reason:["banda_kelsier"]}]->(ham),
+(brisa)-[:KNOWS {reason:["banda_kelsier"]}]->(clubs),
+(brisa)-[:KNOWS {reason:["banda_kelsier"]}]->(dockson),
+(brisa)-[:KNOWS {reason:["banda_kelsier"]}]->(tindwyl),
+(brisa)-[:KNOWS {reason:["banda_kelsier"]}]->(tensoon),
+(brisa)-[:KNOWS {reason:["enemigo"]}]->(lord_legislador),
+(brisa)-[:KNOWS {reason:["subdito"]}]->(lord_legislador),
+
+(ham)-[:KNOWS {reason:["banda_kelsier"]}]->(clubs),
+(ham)-[:KNOWS {reason:["banda_kelsier"]}]->(dockson),
+(ham)-[:KNOWS {reason:["banda_kelsier"]}]->(tindwyl),
+(ham)-[:KNOWS {reason:["banda_kelsier"]}]->(tensoon),
+(ham)-[:KNOWS {reason:["enemigo"]}]->(lord_legislador),
+(ham)-[:KNOWS {reason:["subdito"]}]->(lord_legislador),
+
+(clubs)-[:KNOWS {reason:["tio"]}]->(fantasma),
+(clubs)-[:KNOWS {reason:["banda_kelsier"]}]->(dockson),
+(clubs)-[:KNOWS {reason:["banda_kelsier"]}]->(tindwyl),
+(clubs)-[:KNOWS {reason:["banda_kelsier"]}]->(tensoon),
+(clubs)-[:KNOWS {reason:["enemigo"]}]->(lord_legislador),
+(clubs)-[:KNOWS {reason:["subdito"]}]->(lord_legislador),
+
+(dockson)-[:KNOWS {reason:["banda_kelsier"]}]->(tindwyl),
+(dockson)-[:KNOWS {reason:["banda_kelsier"]}]->(tensoon),
+(dockson)-[:KNOWS {reason:["enemigo"]}]->(lord_legislador),
+(dockson)-[:KNOWS {reason:["subdito"]}]->(lord_legislador),
+
+(straff)-[:KNOWS {reason:["suegro"]}]->(vin),
+(straff)-[:KNOWS {reason:["padre"]}]->(elend),
+(straff)-[:KNOWS {reason:["padre"]}]->(zane),
+(straff)-[:KNOWS {reason:["subdito"]}]->(lord_legislador),
+
+(zane)-[:KNOWS {reason:["hijo"]}]->(straff),
+(zane)-[:KNOWS {reason:["subdito"]}]->(lord_legislador),
+
+(tindwyl)-[:KNOWS {reason:["mentor"]}]->(elend),
+(tindwyl)-[:KNOWS {reason:["banda_kelsier"]}]->(tensoon),
+(tindwyl)-[:KNOWS {reason:["enemigo"]}]->(lord_legislador),
+(tindwyl)-[:KNOWS {reason:["subdito"]}]->(lord_legislador),
+
+(tensoon)-[:KNOWS {reason:["enemigo"]}]->(lord_legislador),
+(tensoon)-[:KNOWS {reason:["subdito"]}]->(lord_legislador),
+
+(lord_legislador)-[:KNOWS {reason:["asesino"]}]->(alendi),
+(lord_legislador)-[:KNOWS {reason:["asesino"]}]->(kelsier),
+
+(alendi)-[:KNOWS {reason:["asesinado"]}]->(lord_legislador)
+
+// Creating Hoid
+CREATE (hoid:Character {name:'hoid'})
+
+CREATE
+(hoid)-[:VISITS]->(scadrial),
+(hoid)-[:VISITS]->(roshar),
+(hoid)-[:KNOWS {reason:["conoce"]}]->(kelsier)
+
+MATCH (n)
+RETURn n;

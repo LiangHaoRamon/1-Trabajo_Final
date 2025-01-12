@@ -1,0 +1,7 @@
+run both commands.
+
+match (a) -[r] -> () delete a, r
+
+above command will delete all nodes with relationships. then run ,
+
+match (a) delete a

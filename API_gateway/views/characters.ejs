@@ -1,0 +1,30 @@
+<section id="chars_section">
+    <div id="user_hello">
+        <h2>Bienvenido <%= user_name %></h2>
+        <h3>Personajes de <%= planet_name %></h3>
+    </div>
+    <div id="char_carousel">
+        <div class="carousel-container">
+            <% elements.forEach((char, index) => { %>
+                <div class="carousel-item <%= index === 0 ? 'active' : '' %>">
+                    <div class="card">
+                        <div class="card-header">
+                            <strong><%= char.name %></strong>
+                        </div>
+                        <div class="card-body">
+                            <p><strong>Planeta:</strong> <%= char.planet %></p>
+                            <p><strong>Habilidad:</strong> <%= char.main_ability %></p>
+                            <button class="characters_sel_but" data-route="/char/<%= char.id %>">Ver</button>
+                        </div>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+        <button id="prevBtn" class="carousel-btn">Anterior</button>
+        <button id="nextBtn" class="carousel-btn">Siguiente</button>
+        <button id="back_map" data-route="/map">Mapa</button>
+    </div>
+    
+    <script src="/js/carousel.js"></script>
+    <script src="/js/char_view_route_but.js"></script>
+</section>

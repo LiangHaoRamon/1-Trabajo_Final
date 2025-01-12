@@ -1,0 +1,74 @@
+[
+    {
+        "id": 1,
+        "name": "Vin",
+        "planet": "Scadrial",
+        "description": "Vin es una nacida de la bruma mitad Skaa, fruto del romance entre Tevidian Tekiel y una de sus amante en el año 1005 del Imperio Final. Fue criada por su medio hermano Reen, que la acogió tras salvarla de su madre, la cual había asesinado a su otra hermana. Los dos vivieron durante años en las…",
+        "personality": "Debido a una vida en las calles siendo considera unaSkaade clase baja, Vin es relativamente pequeña y escuálida. Ella tiene el pelo oscuro, que mantuvo siempre corto sin embargo luego de unirse a laBanda de Kelsierdejó que éste comenzara a crecerle. Vin prefiere usar ropa simple y práctica que le permita luchar sin restricciones, y a pesar de que al principio encontraba los vestidos nobles como incómodos y poco prácticos, al final terminó encontrándole el gusto a usarlos.\nPor naturaleza es desconfiada de los demás debido a la terrible crianza que fue sometida por suhermano, quién solía repetirle que la mejor forma de no ser traicionada era no confiando en nadie. Debido a eso Vin prefiere mantenerse alejada de las personas por temor a ser traicionada. Suele no llamar la atención y opta por esconderse cuando se siente incómoda o ansiosa, prefiriendo la soledad a la compañía de otros. Detesta la atención ajena, lo cual la puso en una posición incómoda con laIglesia del Superviviente, debido a que odiaba ser reverenciada como la heredera deKelsier. Gracias a los instintos de supervivencia aprendidos en la calle Vin suele estar alerta y atenta, y posee una tendencia a sentarse o colocarse en lugares donde puede controlar mejor su entorno. Sin embargo luego de pasar un tiempo con laBanda de Kelsierella comenzó a confiar más en las personas y gracias aElendse volvió abierta con respecto a sus sentimientos.\n",
+        "main_ability": "Nacido de la Bruma",
+        "quote": "«Era fuerte y vulnerable a la vez. Fue mi última maestra y la más grande. Era capaz de entregar todo su ser en cada cosa que hacía. Cuando luchaba era la hoja. Cuando amaba era el beso. En ese aspecto era mucho más… humana que cualquiera que haya conocido.»TenSoonhablando aWaxsobre Vin.[fuente]"
+    },
+    {
+        "id": 2,
+        "name": "Kelsier",
+        "planet": "Scadrial",
+        "description": "Kelsier era un Nacido de la Bruma, mitad Skaa, originario de Scadrial. Era severo y serio, pero siempre se mantenía sonriente como acto de rebelión contra la opresión del Lord Legislador. Odiaba la injusticia y llevó ese odio a tal extremo que le resultaba imposible reconocer alguna clase de bien…",
+        "personality": null,
+        "main_ability": "Nacido de la BrumaFragmento deConservación(temporalmente)",
+        "quote": "«No puedes matarme, Lord Tirano. Represento aquello que nunca has podido matar, no importa cuánto lo hayas intentado. Yo soy la esperanza.»Kelsier alLord Legislador[fuente]"
+    },
+    {
+        "id": 3,
+        "name": "Elend Venture",
+        "planet": "Scadrial",
+        "description": "El Emperador Elend Venture era un joven Noble sumamente idealista que por azares del destino terminó convertido en un Nacido de la Bruma. Junto a su esposa Vin y los restos de los miembros de la Banda de Kelsier conformaron el Nuevo Imperio y ayudó a salvar al mundo de la destrucción planeada por…",
+        "personality": null,
+        "main_ability": "Nacida de la Bruma",
+        "quote": "«Hoy, hombres, os pido vuestras vidas. Os pido vuestras vidas y vuestro valor. Os pido vuestra fe, y vuestro honor: vuestra fuerza, y vuestra compasión. Pues hoy os llevaré a la muerte. No os pido que agradezcáis este hecho. No os insultaré diciendo que es algo bueno o incluso glorioso. Pero sí os diré esto: Cada momento que luchéis será un regalo para quienes están en esta caverna. Cada segundo que luchemos será un segundo más que miles de personas podrán respirar. ¡Cada golpe de espada, cada koloss abatido, cada aliento ganado es una victoria! ¡Es una persona protegida un momento más, una vida extendida, un enemigo frustrado! Al final, nos matarán. ¡Pero, primero, que nos teman!»Discurso de Elend a sus soldados antes de laBatalla de Hathsin[fuente]"
+    },
+    {
+        "id": 4,
+        "name": "Sazed",
+        "planet": "Scadrial",
+        "description": "Sazed era un mayordomo Terrisano que formaba parte de la banda de Kelsier. Era un Guardador y solía llevar unas mentes de metal cargadas con el conocimiento de cientos de libros y religiones prohibidas durante el gobierno de Lord Legislador. Entre sus pares terrisanos era considerado como un…",
+        "personality": "Sazed era un hombre alto, calvo y lleno de anillos y brazaletes hechos con diferentes metales. Los lóbulos de sus orejas fueron estirados y las orejas mismas tenían pendientes que rodeaban todo su perímetro. Solía hablar con voz suave y su rostro generalmente estaba tranquilo. Su vestimenta, al igual que la de todos los mayordomos terrisanos, se componía de túnicas pintoresca, de piezas en forma de V, bordadas y superpuestas alternando los colores de la casa de su amo.\nSazed era de actitud calmada y apacible, y ni siquiera perdía la compostura ante situaciones extremas. Debido a su modo de crianza tenía una compulsión por complacer y obedecer lo que se le ordenaba sin embargo, a diferencia del resto de los terrisanos, él no se sometía tan fácilmente. Esa actitud de desobedecer y tratar de buscar la libertad de su pueblo, lo llevó a ser considerado como un rebelde entre sus pares. Por eso mismo Sazed no tenía una buena imagen de sí mismo, y a menudo se consideraba un cobarde, indigno de recibir afecto y un irresponsable que priorizaba sus necesidades por encima de la mayoría. Sin embargo cuando la situación lo requería Sazed era capaz de demostrar una gran valentía que incluso opacaba a la de los hombres más bravos. También era generoso, caritativo, comprensivo, inspiraba confianza y sus afectos no dudaban en recurrir a él en búsqueda de algún consejo sabio.\n",
+        "main_ability": "FeruquimistaFragmento deConservación",
+        "quote": "«La fe adecuada es como una buena capa, creo. Si te sienta bien, te mantiene cálido y a salvo. Sin embargo, si no te sienta bien, puede asfixiarte.»Sazed[fuente]"
+    },
+    {
+        "id": 5,
+        "name": "Fantasma",
+        "planet": "Scadrial",
+        "description": "Lestibournes (apodo que en el argot de la ciudades del este significa “Me han abandonado”), también conocido como Fantasma o Lord Nacido de la Bruma, era un joven ojo de estaño que formó parte de la banda de Kelsier gracias a que era el sobrino de Clubs. Era el miembro más joven del grupo, tenía…",
+        "personality": null,
+        "main_ability": "Ojo de Estaño(Alomancia)Violento(Hemalurgia)Nacido de la Bruma",
+        "quote": "«Quemar estaño… No es como ver. Es como no ver. Cuando quemas, to viene. Montones de to. Distracciones aquí, allí. Si en quieres el poder de los quereres, ignora las distracciones de los dos. Cuando miras, ves la bruma y ves las casas y sientes la madera y oyes las ratas debajo. Elige uno y no te distraigas.»Consejo de Fantasma aVinen su argot callejero.[fuente]"
+    },
+    {
+        "id": 6,
+        "name": "Waxillium Ladrian",
+        "planet": "Scadrial",
+        "description": "Waxillium “Wax” Ladrian, también llamado Asinthew, es un Nacidoble oriundo de Elendel y el jefe de la Casa Ladrian que se desempeña como vigilante de la ley. En su juventud escapó hacía los Áridos para convertirse en un héroe y se pasó veinte años combatiendo al crimen con la ayuda de aliados como…",
+        "personality": null,
+        "main_ability": "Nacidoble: Chocador (Lanzamonedas+Ajustador)",
+        "quote": "«Te equivocas sobre mí. No soy las manos deArmonía. Soy su espada.»Wax aSangradora[fuente]"
+    },
+    {
+        "id": 7,
+        "name": "Wayne",
+        "planet": "Scadrial",
+        "description": "Wayne es un vigilante de la ley y el mejor amigo de Waxillium Ladrian. Es un Nacidoble, por lo que puede utilizar tanto Alomancia como Feruquimia. Es tanto un Deslizador (puede crear una burbuja de tiempo comprimido a su alrededor mediante la ingesta de Bendaleo), y un Hacedor de sangre (es capaz…",
+        "personality": null,
+        "main_ability": "NacidobleDeslizadoryHacedor de sangre",
+        "quote": "«Los sombreros son un disfraz para el cerebro. Te ayudan a pensar como la última persona que los llevó. Si quieres conocer de verdad a alguien, ponte su sombrero.»Wayne aMeLaan[fuente]"
+    },
+    {
+        "id": 8,
+        "name": "Marasi Colms",
+        "planet": "Scadrial",
+        "description": "Marasi Colms es una joven oriunda de Elendel. Es la hija bastarda de Lord Jackstom Harms y hermanastra de Steris Harms. Es una joven valiente y muy inteligente que se sobrepone a las adversidades a pesar de haber pasado la mayor parte de su vida siendo relegada o denigrada por sus familiares y…",
+        "personality": null,
+        "main_ability": "Pulsadora",
+        "quote": "«Ser útil, aunque sea en un simple estallido de llama y sonido, es mejor que toda una vida sin conseguir nada.»Marasi aWax[fuente]"
+    }
+]

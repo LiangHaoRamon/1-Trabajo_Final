@@ -1,0 +1,19 @@
+<section id="char_detail_section">
+    <div id="char_container">
+        <div class="char_aesth">
+            <div id="char_quote">
+                <p><%= char.quote %></p>
+            </div>
+            <img src="/Images/<%= char.name %>.jpg" alt="<%= char.name %> image">
+        </div>
+        <div class="char_info">
+            <h1><%= char.name %></h1>
+            <h2><%= char.main_ability %></h2>
+            <textarea id="char_description" readonly><%= char.description %></textarea>
+            <button id="char_back_but" data-route="/characters/<%= char.planet %>">⬅  <%= char.planet %></button>
+            <button id="char_vinc_but" data-route="/vinculacanas/<%= char.id %>">Vinculacañas</button>
+        </div>
+    </div>
+</section>
+
+<script src="/js/route_but.js"></script>

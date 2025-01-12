@@ -1,0 +1,39 @@
+<section class="layout">
+    <div class="data">
+        <div class="title">
+            <h3><%= portal %></h3>
+        </div>
+
+        <div class="formSpace">
+            <h1>Explora el Cosmere</h1>
+            <form action="http://localhost:3000/login" method="POST"> <!-- enctype="application/json" -->
+                <input type="text" name="username" placeholder="Username" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <button class="indexButton" id="indexButton-1" type="submit">Iniciar Sesión</button>
+            </form>
+            <button class="indexButton" id="indexButton-2" type="submit">Registrarse</button>
+        </div>    
+    </div>
+    <div class="visual">
+        <img src="Images/cosmere_logo_light.png" alt="Cosmere Logo Light">
+    </div>
+</section>
+
+  <!-- Popup para el registro -->
+<div id="registerPopup" class="popup hidden">
+    <div class="popup-content">
+        <h2>Registro de Luzdeplata</h2>
+        <br>
+        <div class="formSpace">
+            <form action="http://localhost:3000/register" method="POST">
+                <input type="text" name="username" placeholder="Username" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <button class="popupButton" type="submit">Registrarse</button>
+                <button class="popupButton" type="button" id="closePopup">Cancelar</button>
+            </form>  
+        </div>
+        
+    </div>
+</div>
+
+<script src="/js/popup_register.js"></script>

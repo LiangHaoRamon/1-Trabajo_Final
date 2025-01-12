@@ -1,0 +1,28 @@
+<section id="vinc_section">
+    <div id="vinc_container">
+        <div class="vinc_aesth">
+            <img src="/Images/<%= char.name %>.jpg" alt="<%= char.name %> image">
+        </div>
+        <div class="vinc_chat">
+            <!-- Mostrar el historial del chat -->
+            <textarea id="chat" readonly>
+<% if (chatHistory && chatHistory.length) { %>
+<% chatHistory.forEach(entry => { %>
+<%= entry.type === "human" ? "Tú: " : entry.type %><%= entry.content %>
+<% }) %>
+<% } %>
+            </textarea>
+
+            <!-- Formulario para hacer preguntas -->
+            <form action="http://localhost:3000/add_entry/<%= char.id %>" class="add-entry" method="post">
+                <input type="hidden" name="chatHistory" id="hiddenChatHistory" value='<%= JSON.stringify(chatHistory || []) %>' />    
+                <input type="text" id="quest-area" name="question" placeholder="Comunícate con <%= char.name %>...">
+                <button id="quest-but" type="submit">Preguntar</button>
+            </form>
+
+            <button id="vinc_back_but" data-route="/char/<%= char.id %>">⬅  <%= char.name %></button>
+        </div>
+    </div>
+</section>
+
+<script src="/js/vinc_route_but.js"></script>
