@@ -1,4 +1,4 @@
-# Trabajo_Final Web Avanzada
+# 🦘 Trabajo_Final Web Avanzada 🌐
 
 Esta es la aplicación WEB de El Portal del Saltamundos. Una web dedicada a poder explorar los diferentes mundos del Cosmere, universo literario de Brandon Sanderson, conociendo algunos de sus personajes.
 
