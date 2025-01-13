@@ -8,7 +8,7 @@ Esta web está compuesta por varios microservicios y un API Gateway para conecta
 0. [Software que se necesita instalar](#0-Software-que-se-necesita-instalar)
 1. [Servicios que hay que arrancar](#1-Servicios-que-hay-que-arrancar)
 2. [Dependencias que hay que instalar](#2-Dependencias-que-hay-que-instalar)
-3. [Cómo arrancar la parte servidora y la parte cliente](#Cómo-arrancar-la-parte-servidora-y-la-parte-cliente)
+3. [Cómo arrancar la parte servidora y la parte cliente](#3-Cómo-arrancar-la-parte-servidora-y-la-parte-cliente)
 
 ## 0) Software que se necesita instalar:
  - Se necesitará instalar **Docker Desktop**, pues la aplicación está totalmente construida sobre containers de docker.
