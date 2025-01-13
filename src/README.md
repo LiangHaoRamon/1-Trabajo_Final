@@ -4,6 +4,10 @@ Esta es la aplicación WEB de El Portal del Saltamundos. Una web dedicada a pode
 
 Esta web está compuesta por varios microservicios y un API Gateway para conectarlos todos. Para su correcto funcionamiento se habrán de seguir los próximos pasos.
 
+## Índice
+0. [Software que se necesita instalar](#0-Software-que-se-necesita-instalar)
+1. [Servicios que hay que arrancar](#1-Servicios-que-hay-que-arrancar)
+
 ## 0) Software que se necesita instalar:
  - Se necesitará instalar **Docker Desktop**, pues la aplicación está totalmente construida sobre containers de docker.
  - Se necesitará instalar **Node**, pues los microservicios "map_microservice_node" y "API_gateway" funcionan con nodeJS, aunque en realidad docker se encargará de ello.
